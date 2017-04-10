@@ -19,7 +19,6 @@ class LoginController extends Controller
 
     public function loginAjax(Request $request)
     {
-
 		$account = $request->input("account_name", null);
 		$password = $request->input("password", null);
 		dump($account);
