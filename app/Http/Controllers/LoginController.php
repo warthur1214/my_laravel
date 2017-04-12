@@ -12,7 +12,7 @@ class LoginController extends Controller
 {
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
 
-    public function login()
+	public function login()
     {
     	return view("index.login");
     }

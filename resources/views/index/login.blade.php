@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>农产品管理平台</title>
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     <!-- Bootstrap 3.3.6 -->
     <link rel="stylesheet" href="{{asset('/css/public/bootstrap.min.css')}}">
     <!-- Theme style -->
@@ -29,7 +30,9 @@
         </div>
 
         <form action="" method="post" id="login_form">
-            <input type="hidden" name="_token" id="_token" value="{{csrf_token()}}">
+            {{--<input type="hidden" name="_token" id="_token" value="{{csrf_token()}}">--}}
+            {{csrf_field()}}
+{{--            {{method_field("_token")}}--}}
             <div class="form-group has-feedback">
                 <input type="text" class="form-control" placeholder="账号" name="account_name" id="account_name">
                 <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
