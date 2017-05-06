@@ -16,6 +16,5 @@ class AccountService
 	public static function getAllAccount()
 	{
 		return AccountModel::all();
-
 	}
 }
