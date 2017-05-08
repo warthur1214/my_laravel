@@ -36,7 +36,7 @@ class TestController extends Controller
 
     public function getInfo()
     {
-        abort(404);
+//        abort(404);
         AccountService::getInfo();
     }
     public function getList()

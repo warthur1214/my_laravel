@@ -13,7 +13,7 @@ use Illuminate\Support\Facades\DB;
 
 class AccountDao
 {
-    private static $table="tp_account";
+    private static $table="db_crop.tp_account";
 
     public static function getList()
     {
