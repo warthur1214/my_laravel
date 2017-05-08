@@ -37,20 +37,23 @@ Route::group(['prefix'=>'test'], function () {
 	})->name('profile');
 
 	// 隐式绑定
-	Route::get('api/users/{user}', function (App\User $user) {
+	Route::get('/api/users/{user}', function (App\User $user) {
 		return $user->email;
 	});
 
-	Route::get('/info/{age?}', function ($age = 300) {
+	Route::get('/info/age/{age?}', function ($age = 300) {
 		$route = Route::current();
 		$name = Route::currentRouteName();
 		$action = Route::currentRouteAction();
 		return 'info';
 	})->middleware('checkage');
 
-	Route::get('/request', ['uses'=>'TestController@test']);
+	Route::get('/request/{a?}', ['uses'=>'TestController@test']);
 	Route::post('/json', ['uses'=>'TestController@getJson']);
-	Route::get("/account", ['uses'=>'TestController@getAllAccount']);
+    Route::get("/account", ['uses'=>'TestController@getAllAccount']);
+    Route::get("/info", ['uses'=>'TestController@getInfo']);
+    Route::get("/list", ['uses'=>'TestController@getList']);
+	Route::get('/collect', ['uses'=>'TestController@collect']);
 });
 
 

@@ -111,6 +111,8 @@ return [
     'log' => env('APP_LOG', 'single'),
 
 	'log_level' => env('APP_LOG_LEVEL', 'error'),
+
+    'log_max_files' => env('APP_LOG_MAX_FILE', 30),
     /*
     |--------------------------------------------------------------------------
     | Autoloaded Service Providers
@@ -149,7 +151,7 @@ return [
         Illuminate\Validation\ValidationServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
 	    Laravel\Tinker\TinkerServiceProvider::class,
-
+        Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider::class,
         /*
          * Application Service Providers...
          */
