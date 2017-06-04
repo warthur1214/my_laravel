@@ -152,6 +152,7 @@ return [
         Illuminate\View\ViewServiceProvider::class,
 	    Laravel\Tinker\TinkerServiceProvider::class,
         Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider::class,
+        Laravoole\LaravooleServiceProvider::class,
         /*
          * Application Service Providers...
          */
