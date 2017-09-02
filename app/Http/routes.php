@@ -14,13 +14,16 @@
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
-	return view('welcome');
+
+    abort(403);
+
+    return view('welcome');
 });
 
 Route::group(['middleware' => ['web']], function () {
 
 	Route::get('/login', ['uses' => 'LoginController@login']);
-	Route::get('/', ['uses' => 'LoginController@login']);
+	Route::get('/index', ['uses' => 'LoginController@login']);
 	Route::post('/loginAjax', ['uses' => 'LoginController@loginAjax']);
 });
 

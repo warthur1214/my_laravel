@@ -11,7 +11,7 @@ namespace App\Http\Dao;
 
 use Illuminate\Support\Facades\DB;
 
-class AccountDao
+class AccountDao extends BaseDao
 {
     private static $table="db_crop.tp_account";
 
@@ -22,8 +22,14 @@ class AccountDao
 
     public static function getInfo()
     {
-        return DB::table(self::$table)->where('organ_id', 72)
+        return self::db()->where('organ_id', 72)
             ->orderBy('create_time', 'desc')
             ->take(3)->get();
+    }
+
+    public static function selectDataList()
+    {
+        // TODO: Implement selectDataList() method.
+        return DB::table(self::$table)->get();
     }
 }
