@@ -1,2 +1,2 @@
 安装：
-    composer global require "laravel/installer"
+    composer update --no-scripts
